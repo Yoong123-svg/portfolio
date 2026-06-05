@@ -108,7 +108,7 @@
         <h1 style="color: #00e5ff; font-size: 2.5rem; margin-bottom: 10px;">3D Animation Project Breakdown</h1>
         <p style="color: #aaa; font-size: 1.1rem;">An in-depth look at character manipulation, dynamic camera configurations, and staging structures within Blender.</p>
 
-        <div class="video-wrapper">
+        <div class="video-wrapper scroll-reveal-left">
             <iframe 
                 src="https://www.youtube.com/embed/9QzH7SdpH8o" 
                 title="3D Animation Showcase"
@@ -124,7 +124,7 @@
         <p style="color: #aaa;">Visual steps highlighting key phases of the staging development process:</p>
         
         <div class="info-image-grid">
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal-left">
                 <img src="picture1.png" alt="Viewport Setup Overview">
                 <div class="image-caption">
                     <h4>01. Viewport Layout & Environment Staging</h4>
@@ -132,7 +132,7 @@
                 </div>
             </div>
 
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal">
                 <img src="picture2.png" alt="Rigging & Posing System">
                 <div class="image-caption">
                     <h4>02. Character Rigging & Pose Architecture</h4>
@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal-left">
                 <img src="picture3.png" alt="Camera Framing Layout">
                 <div class="image-caption">
                     <h4>03. Cinematic Camera Constraints & Tracking</h4>
@@ -148,7 +148,7 @@
                 </div>
             </div>
 
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal">
                 <img src="picture4.png" alt="Final Render Matrix">
                 <div class="image-caption">
                     <h4>04. Lighting Optimization & Render Properties</h4>
@@ -157,7 +157,7 @@
             </div>
         </div>
 
-        <div class="tech-specs">
+        <div class="tech-specs scroll-reveal">
             <h3 style="margin-top: 0; color: #00e5ff;">Technical Execution Details</h3>
             <ul>
                 <li><strong>Creative Camera Tracking:</strong> Utilized precise tracking configurations and dynamic field-of-view changes to maximize compositional depth during fast-paced movements.</li>
@@ -168,5 +168,30 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
+            
+            if (revealElements.length > 0) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                        } else {
+                            // Removes class instantly on leave so it triggers every single time you scroll!
+                            entry.target.classList.remove("active");
+                        }
+                    });
+                }, { 
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -40px 0px"
+                });
+
+                revealElements.forEach(function (element) {
+                    observer.observe(element);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
