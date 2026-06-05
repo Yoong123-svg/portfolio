@@ -29,7 +29,7 @@
         
         <div class="hero-content">
             <h1>Hello, I'm Yoong Li Yang.</h1>
-            <h2>Multimedia Student </h2>
+            <h2>Multimedia Student & 3D Generalist</h2>
             <p>Currently a Year 2 Semester 2 student pursuing a BITM (Hons.) in Multimedia at UTeM. I bridge structural computer engineering logic with visual multimedia production.</p>
             <div class="cta-group">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -42,7 +42,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="split-grid">
             <div class="profile-card">
-                <img src="profile.png" alt="Yoong Li Yang" class="profile-img">
+                <img src="profile.png" alt="Yoong Li Yang" class="profile-img scroll-reveal-left">
                 <a href="assets/documents/Yoong_Li_Yang_Resume.pdf" download class="btn btn-primary" style="margin-top:20px; display:inline-block;">Download CV 📥</a>
             </div>
             <div class="bio-content scroll-reveal">
@@ -55,7 +55,7 @@
                     <span class="badge badge-tech">Filmora</span>
                     <span class="badge badge-logic">C++</span>
                     <span class="badge badge-logic">MySQL</span>
-                   
+                    <span class="badge badge-logic">Linux</span>
                 </div>
             </div>
         </div>
@@ -133,24 +133,26 @@
 
     <script src="scripts.js"></script>
 
-  <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const element = document.querySelector(".scroll-reveal");
+            const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
             
-            if (element) {
+            if (revealElements.length > 0) {
                 const observer = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
-                            // When the element enters your screen, turn animation ON
+                            // Turn animation ON when element enters viewport
                             entry.target.classList.add("active");
                         } else {
-                            // When you scroll away from it, remove the class so it RESETS
+                            // Reset animation state when scrolled away
                             entry.target.classList.remove("active");
                         }
                     });
-                }, { threshold: 0.1 }); // Triggers instantly when even 10% of the text shows
+                }, { threshold: 0.1 }); // Triggers when 10% visibility is achieved
 
-                observer.observe(element);
+                revealElements.forEach(function (element) {
+                    observer.observe(element);
+                });
             }
         });
     </script>
