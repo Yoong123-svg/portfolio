@@ -1,4 +1,6 @@
-/* GLOBAL STYLES & VARIABLES */
+/* ==========================================================================
+   GLOBAL STYLES & VARIABLES
+   ========================================================================== */
 :root {
     --bg-main: #121212;
     --bg-sub: #1a1a1a;
@@ -43,7 +45,9 @@ h1, h2, h3, h4 {
     padding-left: 15px;
 }
 
-/* HEADER & NAVIGATION */
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
 header {
     position: fixed;
     top: 0;
@@ -85,7 +89,9 @@ header {
     color: var(--accent-cyan);
 }
 
-/* HERO SECTION WITH VIDEO */
+/* ==========================================================================
+   HERO SECTION WITH VIDEO
+   ========================================================================== */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -122,7 +128,9 @@ header {
 .hero-content h2 { font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 20px; }
 .hero-content p { max-width: 600px; margin-bottom: 30px; color: var(--text-secondary); }
 
-/* BUTTONS */
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 .btn {
     padding: 12px 28px;
     border-radius: 4px;
@@ -156,11 +164,33 @@ header {
     color: var(--accent-cyan);
 }
 
-/* INTERFACE COMPONENTS: SPLIT GRID & BADGES */
+/* ==========================================================================
+   ABOUT ME SECTION: SPLIT GRID & BIO
+   ========================================================================== */
 .split-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
+    grid-template-columns: 1fr 1.4fr; /* Upgraded ratio: Gives text breathing room */
+    gap: 60px;                        /* Generous layout gap */
+    align-items: flex-start;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+/* High-fidelity picture sizing maintaining original image specifications */
+.profile-img {
+    max-width: 100%;    
+    height: auto;       
+    object-fit: contain; 
+    border-radius: 8px;
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15); /* Creative ambient glow */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.02); /* Responsive micro-interaction */
 }
 
 .avatar-placeholder {
@@ -175,19 +205,69 @@ header {
     border-radius: 4px;
 }
 
-.badge {
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    margin-right: 8px;
-    margin-bottom: 10px;
-    display: inline-block;
+/* Professional Readable Typography Layout */
+.bio-content p {
+    font-size: 1.15rem;          
+    line-height: 1.8;            
+    color: var(--text-secondary);
+    margin-bottom: 35px;         
+    text-align: justify;         
 }
 
-.badge-tech { background-color: #2a2235; color: #d1b3ff; border: 1px solid #4f3370; }
-.badge-logic { background-color: #1a2a2b; color: var(--accent-cyan); border: 1px solid #1a4d50; }
+.bio-content h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;   
+    letter-spacing: 1.5px;       
+}
 
-/* WORKS PRODUCED GALLERY GRID */
+/* ==========================================================================
+   CREATIVE COMPONENT: TECHNICAL BADGES OVERHAUL
+   ========================================================================== */
+.badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.badge {
+    padding: 10px 20px;          /* Premium pill thickness */
+    border-radius: 30px;         
+    font-size: 0.95rem;          
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+/* Multimedia Production Tools (Sleek Metallic Violet) */
+.badge-tech { 
+    background-color: rgba(138, 92, 246, 0.1); 
+    color: #a78bfa; 
+    border: 1px solid rgba(138, 92, 246, 0.4); 
+}
+.badge-tech:hover {
+    background-color: rgba(138, 92, 246, 0.25);
+    box-shadow: 0 0 12px rgba(138, 92, 246, 0.3);
+}
+
+/* Logic & System Development Tools (Vivid Electric Cyan) */
+.badge-logic { 
+    background-color: rgba(0, 240, 255, 0.08); 
+    color: var(--accent-cyan); 
+    border: 1px solid rgba(0, 240, 255, 0.3); 
+}
+.badge-logic:hover {
+    background-color: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* ==========================================================================
+   WORKS PRODUCED GALLERY GRID
+   ========================================================================== */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -223,7 +303,9 @@ header {
 .project-info h3 { margin-bottom: 10px; font-size: 1.2rem;}
 .project-info p { font-size: 0.9rem; color: var(--text-secondary); }
 
-/* RESUME TIMELINE */
+/* ==========================================================================
+   RESUME TIMELINE
+   ========================================================================== */
 .timeline-item {
     border-left: 2px solid #333;
     padding-left: 20px;
@@ -244,7 +326,9 @@ header {
 
 .time-marker { font-size: 0.85rem; color: var(--accent-cyan); font-weight: bold; }
 
-/* CONTACT FORM & SYSTEM FEEDBACK */
+/* ==========================================================================
+   CONTACT FORM & SYSTEM FEEDBACK
+   ========================================================================== */
 .contact-center { max-width: 600px; margin: 0 auto; text-align: center; }
 .email-highlight { font-size: 1.3rem; color: var(--accent-cyan); margin: 20px 0 40px; font-weight: bold;}
 
@@ -257,11 +341,3 @@ header {
 
 .feedback-msg { margin-top: 15px; font-weight: bold; text-align: center; }
 .feedback-msg.success { color: #00ff88; }
-
-.profile-img {
-    max-width: 100%;    /* Prevents the image from overflowing on smaller screens */
-    height: auto;       /* Forces the height to scale naturally to its original size */
-    object-fit: contain; /* Keeps the original aspect ratio completely untouched */
-    border-radius: 4px;
-    border: 1px solid var(--accent-cyan);
-}
