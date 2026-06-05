@@ -215,7 +215,7 @@ header {
 .scroll-reveal-left {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 10s cubic-bezier(0.25, 1, 0.5, 1), transform 3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 20s cubic-bezier(0.25, 1, 0.5, 1), transform 3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .scroll-reveal-left.active {
     opacity: 1;
@@ -226,7 +226,7 @@ header {
 .scroll-reveal {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 10s cubic-bezier(0.25, 1, 0.5, 1), transform 3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: opacity 20s cubic-bezier(0.25, 1, 0.5, 1), transform 3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .scroll-reveal.active {
     opacity: 1;
