@@ -84,7 +84,6 @@ header {
     transition: color 0.2s ease;
 }
 
-/* HCI Visual Feedback State */
 .nav-links a:hover {
     color: var(--accent-cyan);
 }
@@ -169,8 +168,8 @@ header {
    ========================================================================== */
 .split-grid {
     display: grid;
-    grid-template-columns: 1fr 1.4fr; /* Upgraded ratio: Gives text breathing room */
-    gap: 60px;                        /* Generous layout gap */
+    grid-template-columns: 1fr 1.4fr; 
+    gap: 60px;                        
     align-items: flex-start;
 }
 
@@ -178,34 +177,20 @@ header {
     text-align: center;
 }
 
-/* High-fidelity picture sizing maintaining original image specifications */
 .profile-img {
     max-width: 100%;    
     height: auto;       
     object-fit: contain; 
     border-radius: 8px;
     border: 2px solid var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15); /* Creative ambient glow */
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15); 
     transition: transform 0.3s ease;
 }
 
 .profile-img:hover {
-    transform: scale(1.02); /* Responsive micro-interaction */
+    transform: scale(1.02); 
 }
 
-.avatar-placeholder {
-    width: 100%;
-    height: 300px;
-    background: #252525;
-    border: 1px dashed var(--accent-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    border-radius: 4px;
-}
-
-/* Professional Readable Typography Layout */
 .bio-content p {
     font-size: 1.15rem;          
     line-height: 1.8;            
@@ -222,8 +207,24 @@ header {
     letter-spacing: 1.5px;       
 }
 
+/* 🚀 PURE CSS NO-FAIL ANIMATION ENGINE */
+@keyframes glideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pure-css-flow {
+    animation: glideUpFade 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
 /* ==========================================================================
-   CREATIVE COMPONENT: TECHNICAL BADGES OVERHAUL
+   CREATIVE COMPONENT: TECHNICAL BADGES
    ========================================================================== */
 .badge-group {
     display: flex;
@@ -233,7 +234,7 @@ header {
 }
 
 .badge {
-    padding: 10px 20px;          /* Premium pill thickness */
+    padding: 10px 20px;          
     border-radius: 30px;         
     font-size: 0.95rem;          
     font-weight: 600;
@@ -243,7 +244,6 @@ header {
     cursor: default;
 }
 
-/* Multimedia Production Tools (Sleek Metallic Violet) */
 .badge-tech { 
     background-color: rgba(138, 92, 246, 0.1); 
     color: #a78bfa; 
@@ -254,7 +254,6 @@ header {
     box-shadow: 0 0 12px rgba(138, 92, 246, 0.3);
 }
 
-/* Logic & System Development Tools (Vivid Electric Cyan) */
 .badge-logic { 
     background-color: rgba(0, 240, 255, 0.08); 
     color: var(--accent-cyan); 
