@@ -36,6 +36,55 @@
             height: 100%;
             border: none;
         }
+        
+        /* Custom CSS Grid for the 4 Project Images */
+        .info-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        @media (max-width: 500px) {
+            .info-image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .image-frame {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .image-frame:hover {
+            border-color: #00e5ff;
+            transform: translateY(-2px);
+        }
+        .image-frame img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain; /* Perfect scaling without edge cropping */
+            background-color: #1a1a1a; /* Dark padding fill */
+            display: block;
+            border-bottom: 1px solid #222;
+        }
+        .image-caption {
+            padding: 15px;
+        }
+        .image-caption h4 {
+            margin: 0 0 5px 0;
+            color: #00e5ff;
+            font-size: 1.1rem;
+        }
+        .image-caption p {
+            margin: 0;
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
         .tech-specs {
             background-color: #111;
             padding: 25px;
@@ -70,6 +119,43 @@
 
         <h2 style="margin-top: 40px; color: #00e5ff;">Project Core Process</h2>
         <p>This project isolates advanced viewport staging pipelines to focus heavily on character manipulation, keyframed animation weight distribution, and high-impact cinematic rendering setups. By establishing distinct structural properties across constraints, the resulting animation offers professional storytelling flow and seamless interaction values.</p>
+
+        <h2 style="margin-top: 50px; color: #00e5ff;">Technical Production Breakdown</h2>
+        <p style="color: #aaa;">Visual steps highlighting key phases of the staging development process:</p>
+        
+        <div class="info-image-grid">
+            <div class="image-frame">
+                <img src="picture1.png" alt="Viewport Setup Overview">
+                <div class="image-caption">
+                    <h4>01. Viewport Layout & Environment Staging</h4>
+                    <p>Configuring spatial references, initial lighting orientations, and camera focal boundaries to map out keyframed motion pathways securely.</p>
+                </div>
+            </div>
+
+            <div class="image-frame">
+                <img src="picture2.png" alt="Rigging & Posing System">
+                <div class="image-caption">
+                    <h4>02. Character Rigging & Pose Architecture</h4>
+                    <p>Manipulating weight bones and keyframe vectors to capture natural articulation, acceleration curves, and secondary movement impacts.</p>
+                </div>
+            </div>
+
+            <div class="image-frame">
+                <img src="picture3.png" alt="Camera Framing Layout">
+                <div class="image-caption">
+                    <h4>03. Cinematic Camera Constraints & Tracking</h4>
+                    <p>Choreographing multiple camera angles and dynamic speed paths to maximize visual impact and maintain fluid narrative focus.</p>
+                </div>
+            </div>
+
+            <div class="image-frame">
+                <img src="picture4.png" alt="Final Render Matrix">
+                <div class="image-caption">
+                    <h4>04. Lighting Optimization & Render Properties</h4>
+                    <p>Balancing shadow thresholds, emission nodes, and noise samples to output a polished, high-fidelity visual sequence quickly.</p>
+                </div>
+            </div>
+        </div>
 
         <div class="tech-specs">
             <h3 style="margin-top: 0; color: #00e5ff;">Technical Execution Details</h3>
