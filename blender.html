@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animation Pipeline | Detailed Breakdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .details-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        .back-btn {
+            color: #00e5ff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #1a1a1a;
+            border-radius: 8px;
+            margin: 30px 0;
+            border: 1px solid #333;
+        }
+        .video-wrapper iframe, .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .tech-specs {
+            background-color: #111;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #00e5ff;
+            margin-top: 30px;
+        }
+        .tech-specs ul {
+            padding-left: 20px;
+        }
+        .tech-specs li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #0a0a0a; color: #fff; font-family: sans-serif; line-height: 1.6;">
+
+    <div class="details-container">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+        
+        <h1 style="color: #00e5ff; font-size: 2.5rem; margin-bottom: 10px;">3D Animation Project Breakdown</h1>
+        <p style="color: #aaa; font-size: 1.1rem;">An in-depth look at character manipulation, dynamic camera configurations, and staging structures within Blender.</p>
+
+        <!-- 🎥 Video Showcase Section -->
+        <div class="video-wrapper">
+            <!-- OPTION A: If you have a local mp4 video file uploaded in an assets folder, use this: -->
+            <!-- <video controls><source src="assets/videos/blender_showcase.mp4" type="video/mp4"></video> -->
+            
+            <!-- OPTION B: If you host your video on YouTube, paste your embed link below instead: -->
+            <iframe src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE" allowfullscreen></iframe>
+        </div>
+
+        <h2 style="margin-top: 40px; color: #00e5ff;">Project Core Process</h2>
+        <p>This project isolates advanced viewport staging pipelines to focus heavily on character manipulation, keyframed animation weight distribution, and high-impact cinematic rendering setups. By establishing distinct structural properties across constraints, the resulting animation offers professional storytelling flow and seamless interaction values.</p>
+
+        <div class="tech-specs">
+            <h3 style="margin-top: 0; color: #00e5ff;">Technical Execution Details</h3>
+            <ul>
+                <li><strong>Creative Camera Tracking:</strong> Utilized precise tracking configurations and dynamic field-of-view changes to maximize compositional depth during fast-paced movements.</li>
+                <li><strong>Keyframed Lighting Paths:</strong> Animated light source transformations matching the character's movement vectors to guarantee dramatic, high-contrast values from every angle.</li>
+                <li><strong>Rig Posing & Mesh Alignment:</strong> Managed clean keyframing transitions across complex mesh layouts to avoid intersecting geometry distortions.</li>
+                <li><strong>Render Settings:</strong> Optimized shader samples and light bounce balances to secure rapid output generation without sacrificing visual fidelity.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
