@@ -84,7 +84,7 @@
     <section id="projects" class="container bg-alt clearfix">
         <h2 class="section-title">Works Produced</h2>
         <div class="gallery-grid">
-            <div class="project-card" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="project-card scroll-reveal" style="display: flex; flex-direction: column; height: 100%;">
                 <img src="blender_render.png" alt="3D Animation Showcase" style="width: 100%; height: 200px; object-fit: contain; background-color: #1a1a1a; display: block;">
                 <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 40px;">
                     <div>
@@ -95,7 +95,7 @@
                 </div>
             </div>
             
-            <div class="project-card" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="project-card scroll-reveal" style="display: flex; flex-direction: column; height: 100%;">
                 <img src="picture9.png" alt="Multimedia Production Preview" style="width: 100%; height: 200px; object-fit: contain; background-color: #1a1a1a; display: block;">
                 <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 40px;">
                     <div>
@@ -187,18 +187,24 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Target animation containers
             const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
             
             if (revealElements.length > 0) {
                 const observer = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
+                            // Adds the active class when scrolled into view
                             entry.target.classList.add("active");
                         } else {
+                            // Completely removes the class when scrolled away so it animates every single time!
                             entry.target.classList.remove("active");
                         }
                     });
-                }, { threshold: 0.1 });
+                }, { 
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px"
+                });
 
                 revealElements.forEach(function (element) {
                     observer.observe(element);
