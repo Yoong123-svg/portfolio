@@ -108,7 +108,7 @@
         <h1 style="color: #00e5ff; font-size: 2.5rem; margin-bottom: 10px;">Multimedia Production Breakdown</h1>
         <p style="color: #aaa; font-size: 1.1rem;">An extensive exploration into live audio signal management, hardware staging setups, and digital post-production timelines.</p>
 
-        <div class="video-wrapper">
+        <div class="video-wrapper scroll-reveal-left">
             <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
                 <source src="Production.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -122,7 +122,7 @@
         <p style="color: #aaa;">On-site configurations, camera metrics calibrations, and communication layout elements:</p>
         
         <div class="info-image-grid">
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal-left">
                 <img src="picture5.png" alt="Camera Exposure Calibration Matrix">
                 <div class="image-caption">
                     <h4>01. Camera Exposure Matrix Triangulation</h4>
@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal">
                 <img src="picture6.png" alt="Gimbal Stabilization Rig Setup">
                 <div class="image-caption">
                     <h4>02. Three-Axis Gimbal Stabilization Setup</h4>
@@ -138,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal-left">
                 <img src="picture7.png" alt="On-Screen Monitoring & Audio Capture">
                 <div class="image-caption">
                     <h4>03. Viewport Monitoring & Acoustic Direction Capture</h4>
@@ -146,7 +146,7 @@
                 </div>
             </div>
 
-            <div class="image-frame">
+            <div class="image-frame scroll-reveal">
                 <img src="picture8.png" alt="Crew Communications Management">
                 <div class="image-caption">
                     <h4>04. Technical Committee Site Operations & Wireless Link</h4>
@@ -155,7 +155,7 @@
             </div>
         </div>
 
-        <div class="tech-specs">
+        <div class="tech-specs scroll-reveal">
             <h3 style="margin-top: 0; color: #00e5ff;">Technical Operation Competencies</h3>
             <ul>
                 <li><strong>Live Audio PA Systems Engineering:</strong> Managed sound console decibel tracking matrices, routing clean signal balances across amplifiers to prevent frequency feedback clipping.</li>
@@ -166,5 +166,30 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
+            
+            if (revealElements.length > 0) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                        } else {
+                            // Removes class instantly on leave so it triggers every single time you scroll!
+                            entry.target.classList.remove("active");
+                        }
+                    });
+                }, { 
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -40px 0px"
+                });
+
+                revealElements.forEach(function (element) {
+                    observer.observe(element);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
