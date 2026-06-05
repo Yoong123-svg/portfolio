@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoong Li Yang | Digital Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Essential layout protection to prevent sections from running into each other */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        section {
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,14 +36,13 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">My Projects</a></li>
                 <li><a href="#resume">Resume</a></li>
-                <!-- New navigation link added here before contact -->
                 <li><a href="#extracurricular">Extracurricular</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section clearfix">
         <div class="video-overlay"></div>
         <video autoplay muted loop id="hero-video">
             <source src="assets/videos/hero_reel.mp4" type="video/mp4">
@@ -31,7 +50,7 @@
         
         <div class="hero-content">
             <h1>Hello, I'm Yoong Li Yang.</h1>
-            <h2>Multimedia Student </h2>
+            <h2>Multimedia Student</h2>
             <p>Currently a Year 2 Semester 2 student pursuing a BITM (Hons.) in Multimedia at UTeM. I bridge structural computer engineering logic with visual multimedia production.</p>
             <div class="cta-group">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -40,7 +59,7 @@
         </div>
     </section>
 
-    <section id="about" class="container">
+    <section id="about" class="container clearfix">
         <h2 class="section-title">About Me</h2>
         <div class="split-grid">
             <div class="profile-card">
@@ -62,10 +81,9 @@
         </div>
     </section>
 
- <section id="projects" class="container bg-alt">
+    <section id="projects" class="container bg-alt clearfix">
         <h2 class="section-title">Works Produced</h2>
         <div class="gallery-grid">
-            <!-- Project 1 (With More Details Link added at bottom right) -->
             <div class="project-card" style="display: flex; flex-direction: column; height: 100%;">
                 <img src="blender_render.png" alt="3D Animation Showcase" style="width: 100%; height: 200px; object-fit: contain; background-color: #1a1a1a; display: block;">
                 <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 40px;">
@@ -73,21 +91,21 @@
                         <h3>3D Animation & Motion Design</h3>
                         <p>Cinematic sequences produced in Blender utilizing strategic keyframed light behavior and artistic camera tracking mechanisms. Emphasizes creative angle choreography and dynamic illumination paths to elevate visual storytelling pacing.</p>
                     </div>
-                    <!-- 🔗 Right bottom corner link -->
                     <a href="blender.html" style="position: absolute; bottom: 15px; right: 20px; color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
                 </div>
             </div>
             
-            <!-- Project 2 -->
-          <div class="project-card">
+            <div class="project-card">
                 <div class="project-media">[ Timeline Editing Preview ]</div>
                 <div class="project-info">
                     <h3>Multimedia Production & Technical Systems Reel</h3>
                     <p>A comprehensive media portfolio highlighting technical execution across the entire production lifecycle. Features hands-on experience in field shooting setup, live PA system audio reinforcement console leveling, and post-production editing inside CapCut and Filmora. Focuses on seamless multi-camera transitions, precise rhythmic beat-mapping, and engineered signal controls to deliver balanced, high-impact sensory experiences.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-    <section id="resume" class="container">
+    <section id="resume" class="container clearfix">
         <h2 class="section-title">Academic History & Qualities</h2>
         <div class="split-grid">
             <div>
@@ -114,8 +132,7 @@
         </div>
     </section>
 
-    <!-- 🌟 New Extracurricular Section Added Right Here -->
-    <section id="extracurricular" class="container">
+    <section id="extracurricular" class="container bg-alt clearfix">
         <h2 class="section-title">Extracurricular Activities</h2>
         <div class="split-grid">
             <div>
@@ -147,7 +164,7 @@
         </div>
     </section>
 
-    <section id="contact" class="container bg-alt">
+    <section id="contact" class="container clearfix">
         <div class="contact-center">
             <h2>Let's Connect</h2>
             <p>Whether you are looking for a multimedia intern, a video editor, or a 3D asset modeler, feel free to drop a message.</p>
@@ -173,14 +190,12 @@
                 const observer = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
-                            // Turn animation ON when element enters viewport
                             entry.target.classList.add("active");
                         } else {
-                            // Reset animation state when scrolled away
                             entry.target.classList.remove("active");
                         }
                     });
-                }, { threshold: 0.1 }); // Triggers when 10% visibility is achieved
+                }, { threshold: 0.1 });
 
                 revealElements.forEach(function (element) {
                     observer.observe(element);
