@@ -18,16 +18,73 @@
             display: inline-block;
             margin-bottom: 30px;
         }
-        .main-hero-img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-            background-color: #1a1a1a;
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #1a1a1a;
             border-radius: 8px;
+            margin: 30px 0;
             border: 1px solid #333;
-            margin: 20px 0 40px 0;
-            display: block;
         }
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Custom Grid Configuration for 4 Production Assets */
+        .info-image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        @media (max-width: 500px) {
+            .info-image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .image-frame {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .image-frame:hover {
+            border-color: #00e5ff;
+            transform: translateY(-2px);
+        }
+        .image-frame img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain; /* Prevents picture cropping, matching desktop layout dimensions */
+            background-color: #1a1a1a;
+            display: block;
+            border-bottom: 1px solid #222;
+        }
+        .image-caption {
+            padding: 15px;
+        }
+        .image-caption h4 {
+            margin: 0 0 5px 0;
+            color: #00e5ff;
+            font-size: 1.1rem;
+        }
+        .image-caption p {
+            margin: 0;
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
         .tech-specs {
             background-color: #111;
             padding: 25px;
@@ -51,10 +108,52 @@
         <h1 style="color: #00e5ff; font-size: 2.5rem; margin-bottom: 10px;">Multimedia Production Breakdown</h1>
         <p style="color: #aaa; font-size: 1.1rem;">An extensive exploration into live audio signal management, hardware staging setups, and digital post-production timelines.</p>
 
-        <img src="picture9.png" alt="Live Systems Tuning Work" class="main-hero-img">
+        <div class="video-wrapper">
+            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                <source src="Production.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
         <h2 style="color: #00e5ff;">Production Methodology</h2>
         <p>This project showcases full execution capability regarding real-world studio recording and engineering setups. By balancing real-time acoustic management criteria on field sets with fast post-production software compilation workflows, the final outputs are structurally balanced and fully optimized for digital asset deployment platforms.</p>
+
+        <h2 style="margin-top: 50px; color: #00e5ff;">Technical Field Operations</h2>
+        <p style="color: #aaa;">On-site configurations, camera metrics calibrations, and communication layout elements:</p>
+        
+        <div class="info-image-grid">
+            <div class="image-frame">
+                <img src="picture5.png" alt="Camera Exposure Calibration Matrix">
+                <div class="image-caption">
+                    <h4>01. Camera Exposure Matrix Triangulation</h4>
+                    <p>Analyzing balancing matrices across ISO levels, Aperture Values (AV), and Shutter Speed/Time Values (TV) to map target illumination parameters before tracking real-time frames.</p>
+                </div>
+            </div>
+
+            <div class="image-frame">
+                <img src="picture6.png" alt="Gimbal Stabilization Rig Setup">
+                <div class="image-caption">
+                    <h4>02. Three-Axis Gimbal Stabilization Setup</h4>
+                    <p>Calibrating balancing locks on a motorized DJI gimbal arm framework carrying a Sony Mirrorless system and shotgun mic layout to maintain zero shock drift throughout recording trails.</p>
+                </div>
+            </div>
+
+            <div class="image-frame">
+                <img src="picture7.png" alt="On-Screen Monitoring & Audio Capture">
+                <div class="image-caption">
+                    <h4>03. Viewport Monitoring & Acoustic Direction Capture</h4>
+                    <p>Evaluating camera metadata displays (1/50, F3.2, ISO 2000) while managing sound input captures using a high-density deadcat windscreen layer mounted over an external microphone console.</p>
+                </div>
+            </div>
+
+            <div class="image-frame">
+                <img src="picture8.png" alt="Crew Communications Management">
+                <div class="image-caption">
+                    <h4>04. Technical Committee Site Operations & Wireless Link</h4>
+                    <p>Structuring real-time backstage coordination using Baofeng radio frequency transceivers to manage live adjustments across lighting crews, PA technicians, and event controllers.</p>
+                </div>
+            </div>
+        </div>
 
         <div class="tech-specs">
             <h3 style="margin-top: 0; color: #00e5ff;">Technical Operation Competencies</h3>
