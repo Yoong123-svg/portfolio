@@ -174,16 +174,15 @@
             <p>Whether you are looking for a multimedia intern, a video editor, or a 3D asset modeler, feel free to drop a message.</p>
             <p class="email-highlight">liyangyoong@gmail.com</p>
             
-            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="contact-form">
+            <form action="https://formspree.io/liyangyoong@gmail.com" method="POST" class="contact-form">
                 
-                <input type="hidden" name="access_key" value="abcb50a7-bcd8-44f3-9054-9d467d499efd">
-
                 <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email Address" required>
+                <input type="email" name="_replyto" placeholder="Your Email Address" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 
+                <input type="hidden" name="_next" value="https://yoongliyang.github.io/">
+
                 <button type="submit" class="btn btn-primary">Send Message</button>
-                <div id="formFeedback" class="feedback-msg"></div>
             </form>
         </div>
     </section>
