@@ -222,15 +222,17 @@ header {
     transform: translateX(0);
 }
 
-/* Bottom Glide (Bio Text Paragraph) */
+/* Bottom Glide changed to Right-Side Glide (Bio Text Paragraph) */
 .scroll-reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 20s cubic-bezier(0.25, 1, 0.5, 1), transform 3s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateX(50px); /* ➡️ Moves the start position 50px to the right side */
+    /* ⚡ Synchronized both opacity and transform to a smooth 0.8 seconds */
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 .scroll-reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0); /* ✅ Glides back to its original position */
 }
 
 /* ==========================================================================
