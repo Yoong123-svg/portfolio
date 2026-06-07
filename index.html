@@ -174,17 +174,17 @@
             <p>Whether you are looking for a multimedia intern, a video editor, or a 3D asset modeler, feel free to drop a message.</p>
             <p class="email-highlight">liyangyoong@gmail.com</p>
             
-            <form action="https://formsubmit.co/liyangyoong@gmail.com" method="POST" class="contact-form">
+            <form id="portfolioContactForm" class="contact-form">
                 
                 <input type="hidden" name="_captcha" value="false">
-                
-                <input type="hidden" name="_next" value="https://Yoong123-svg.github.io/portfolio/index.html">
 
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email Address" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" id="submitBtn" class="btn btn-primary">Send Message</button>
+                
+                <div id="formFeedback" class="feedback-msg" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; min-height: 25px; transition: color 0.3s ease;"></div>
             </form>
         </div>
     </section>
@@ -193,17 +193,56 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Target animation containers
+            // 1. 📬 Silent Form Handling System
+            const form = document.getElementById("portfolioContactForm");
+            const feedback = document.getElementById("formFeedback");
+            const button = document.getElementById("submitBtn");
+
+            if (form) {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault(); // Stop page from refreshing or redirecting!
+                    
+                    // Visual feedback during sending state
+                    button.disabled = true;
+                    button.innerText = "Sending...";
+                    feedback.style.color = "#00f0ff";
+                    feedback.innerText = "Processing your message...";
+
+                    // Pack form entries to push online cleanly
+                    const formData = new FormData(form);
+
+                    fetch("https://formsubmit.co/ajax/liyangyoong@gmail.com", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Success Action
+                        feedback.style.color = "#00ff88"; // Bright green text color
+                        feedback.innerText = "Message sent successfully! I will reply to your email within 24 hours.";
+                        form.reset(); // Empties fields so users can type another message without page reloads
+                    })
+                    .catch(error => {
+                        // Fallback handling error state
+                        feedback.style.color = "#ff3333";
+                        feedback.innerText = "Oops! Something went wrong. Please try again.";
+                    })
+                    .finally(() => {
+                        // Bring button back online instantly
+                        button.disabled = false;
+                        button.innerText = "Send Message";
+                    });
+                });
+            }
+
+            // 2. 🎬 Scroll Trigger Animations System
             const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
-            
             if (revealElements.length > 0) {
                 const observer = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {
                         if (entry.isIntersecting) {
-                            // Adds the active class when scrolled into view
                             entry.target.classList.add("active");
                         } else {
-                            // Completely removes the class when scrolled away so it animates every single time!
                             entry.target.classList.remove("active");
                         }
                     });
