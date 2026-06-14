@@ -71,12 +71,12 @@
                 <div class="img-container">
                     <img src="blender_render.png" alt="3D Animation Showcase">
                 </div>
-                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 50px;">
+                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 60px;">
                     <div>
                         <h3>3D Animation & Motion Design</h3>
                         <p>Cinematic sequences produced in Blender utilizing strategic keyframed light behavior and artistic camera tracking mechanisms. Emphasizes creative angle choreography and dynamic illumination paths to elevate visual storytelling pacing.</p>
                     </div>
-                    <a href="blender.html" style="position: absolute; bottom: 20px; right: 25px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
+                    <a href="blender.html" class="tech-link">EXECUTE_SUBPAGE //</a>
                 </div>
             </div>
             
@@ -84,12 +84,12 @@
                 <div class="img-container">
                     <img src="picture9.png" alt="Multimedia Production Preview">
                 </div>
-                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 50px;">
+                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 60px;">
                     <div>
                         <h3>Multimedia Production & Systems Reel</h3>
                         <p>A comprehensive media portfolio highlighting technical execution across the entire production lifecycle. Features hands-on experience in field shooting setup, live PA system audio reinforcement console leveling, and post-production editing inside CapCut and Filmora.</p>
                     </div>
-                    <a href="production.html" style="position: absolute; bottom: 20px; right: 25px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
+                    <a href="production.html" class="tech-link">EXECUTE_SUBPAGE //</a>
                 </div>
             </div>
         </div>
@@ -101,12 +101,12 @@
             <div class="scroll-reveal-left">
                 <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Education</h3>
                 <div class="timeline-item">
-                    <p class="time-marker">2024 - Present (Year 2 Sem 2)</p>
+                    <p class="time-marker">2024 - PRESENT</p>
                     <h4>Universiti Teknikal Malaysia Melaka (UTeM)</h4>
                     <p style="color: var(--text-muted);">Bachelor of Information Technology (Hons.) in Multimedia (BITM)</p>
                 </div>
                 <div class="timeline-item">
-                    <p class="time-marker">Previous Institutional Degree</p>
+                    <p class="time-marker">PREVIOUS DEGREE</p>
                     <h4>Politeknik Merlimau Melaka (PMM)</h4>
                     <p style="color: var(--text-muted);">Diploma in Electronic Engineering (Computer)</p>
                 </div>
@@ -208,6 +208,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // 1. 表单静默处理
             const form = document.getElementById("portfolioContactForm");
             const feedback = document.getElementById("formFeedback");
             const button = document.getElementById("submitBtn");
@@ -243,6 +244,7 @@
                 });
             }
 
+            // 2. 动态侧滑触发
             const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
             if (revealElements.length > 0) {
                 const observer = new IntersectionObserver(function (entries) {
@@ -262,6 +264,23 @@
                     observer.observe(element);
                 });
             }
+
+            // 🛠️ 3. 新增创意：图片卡片鼠标 3D 浮动视差特效脚本
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left - (rect.width / 2);
+                    const y = e.clientY - rect.top - (rect.height / 2);
+                    
+                    // 将旋转角度限制在微幅 5 度以内，丝滑有质感
+                    card.style.transform = `rotateY(${x / 25}deg) rotateX(${-y / 25}deg) translateY(-5px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'rotateY(0deg) rotateX(0deg) translateY(0px)';
+                });
+            });
         });
     </script>
 </body>
