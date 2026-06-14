@@ -44,7 +44,7 @@ body {
     background: radial-gradient(circle at 50% 50%, #0c0d14 0%, #060608 100%);
 }
 
-/* 创意大标题 */
+/* 🧱 修复后的创意大标题：移除了文字，改回纯科技感极细霓虹线条 */
 .section-title {
     font-family: var(--font-tech);
     font-size: 2.6rem;
@@ -58,13 +58,14 @@ body {
 }
 
 .section-title::after {
-    content: "[ SYS_OUTPUT // WORKS ]";
+    content: "";
     display: block;
-    font-size: 0.8rem;
-    color: var(--primary);
-    margin-top: 10px;
-    letter-spacing: 2px;
-    text-shadow: 0 0 8px var(--primary);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 0 12px var(--primary);
 }
 
 /* 导航栏 */
@@ -88,7 +89,6 @@ header {
 }
 
 .logo {
-    font-family: var(--font-tech);
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary);
@@ -263,15 +263,13 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ==========================================================================
-   🚀 极限创意重构：多媒体系统控制台 (Project Cards UI)
-   ========================================================================== */
+/* 作品并排网格系统 */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     width: 100%;
-    perspective: 1000px; /* 激活3D空间视差深度感 */
+    perspective: 1000px;
 }
 
 @media (max-width: 850px) {
@@ -280,19 +278,18 @@ header {
     }
 }
 
-/* 高级硬核科技风卡片基础架构 */
+/* 科技风卡片架构 */
 .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 4px; /* 改用利落的硬切角 */
+    border-radius: 4px;
     overflow: hidden;
     position: relative;
     backdrop-filter: blur(10px);
-    transform-style: preserve-3d; /* 维持子元素3D视差 */
+    transform-style: preserve-3d;
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* 创造四个角落的科幻L型光标裁切线 */
 .project-card::before {
     content: "";
     position: absolute;
@@ -312,7 +309,6 @@ header {
     z-index: 5;
 }
 
-/* 激活鼠标悬浮高亮变色 */
 .project-card:hover {
     border-color: rgba(0, 229, 255, 0.3);
     box-shadow: 0 15px 35px rgba(0, 229, 255, 0.08);
@@ -324,7 +320,7 @@ header {
     border-bottom-color: var(--primary); border-right-color: var(--primary);
 }
 
-/* 核心视窗：雷达扫描线与电磁干扰质感 */
+/* 图片容器：雷达扫描特效 */
 .project-card .img-container {
     width: 100%;
     height: 250px;
@@ -336,7 +332,6 @@ header {
     position: relative;
 }
 
-/* 动态雷达水平激光扫描线 */
 .project-card .img-container::after {
     content: "";
     position: absolute;
@@ -366,11 +361,10 @@ header {
 }
 
 .project-card:hover img {
-    transform: scale(1.02) translateZ(15px); /* 视差前移 */
+    transform: scale(1.02) translateZ(15px);
     filter: brightness(1.05) contrast(1.1);
 }
 
-/* 信息控制界面 */
 .project-info {
     padding: 30px;
     background: linear-gradient(to bottom, transparent, rgba(6,6,8,0.95));
@@ -388,11 +382,9 @@ header {
     gap: 10px;
 }
 
-/* 标题前缀加入类似终端指令的符号 */
 .project-info h3::before {
     content: "//";
     color: var(--primary);
-    font-family: var(--font-tech);
 }
 
 .project-info p {
@@ -402,7 +394,7 @@ header {
     margin-bottom: 30px;
 }
 
-/* 炫酷极客风格操作按钮 */
+/* 科技控控制按钮 */
 .tech-link {
     font-family: var(--font-tech);
     position: absolute;
