@@ -2,7 +2,6 @@
    🌟 全局现代暗黑科技风样式表 (Yoong Li Yang Portfolio)
    ========================================================================== */
 
-/* 引入 Google 顶级现代科技感字体 */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
 
 :root {
@@ -34,7 +33,6 @@ body {
     overflow-x: hidden;
 }
 
-/* 🧱 布局通用容器 */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -65,7 +63,7 @@ body {
     box-shadow: 0 0 10px var(--primary);
 }
 
-/* 导航栏美化 */
+/* 导航栏 */
 header {
     position: fixed;
     top: 0;
@@ -111,7 +109,7 @@ header {
     color: var(--primary);
 }
 
-/* 🎬 Hero 视频区域 */
+/* Hero 视频区域 */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -167,7 +165,7 @@ header {
     margin-bottom: 40px;
 }
 
-/* 🎛️ 按钮高级样式 */
+/* 按钮样式 */
 .cta-group {
     display: flex;
     gap: 20px;
@@ -209,7 +207,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* 👥 网格与分裂视图布局 */
+/* 分裂视图布局 */
 .split-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -242,7 +240,7 @@ header {
     border-color: var(--primary);
 }
 
-/* 🏷️ 技术徽章样式 */
+/* 技术徽章 */
 .badge-group {
     display: flex;
     flex-wrap: wrap;
@@ -269,7 +267,22 @@ header {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* 🖼️ Works Produced 项目卡片美化 */
+/* 🎨 核心美化：Works Produced 响应式并排网格系统 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 核心修改：强制电脑端并排分成两列 */
+    gap: 35px; /* 核心修改：让两张卡片横向与纵向都保持 35px 的完美空隙 */
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 手机端自动切换回单列，防止挤压 */
+        gap: 30px;
+    }
+}
+
+/* 项目卡片 */
 .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -284,22 +297,29 @@ header {
     box-shadow: 0 12px 30px rgba(0, 229, 255, 0.12);
 }
 
+/* 图片容器：加入深色渐变背景 */
 .project-card .img-container {
     width: 100%;
-    height: 220px;
+    height: 240px; /* 控制显示高度 */
     overflow: hidden;
-    background-color: #16161a;
+    background: linear-gradient(135deg, #121216 0%, #1a1a24 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
+/* 核心优化：全显图片且不被压扁裁剪 */
 .project-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* 核心修改：全面展示整张照片，绝对不裁剪任何细节 */
     transition: transform 0.5s ease;
+    padding: 5px; /* 留出微小边距，增加视窗科技感 */
 }
 
 .project-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03); /* 微微放大，保持流畅感 */
 }
 
 .project-info {
@@ -318,7 +338,7 @@ header {
     margin-bottom: 20px;
 }
 
-/* 🎓 Timeline 学术历程样式 */
+/* Timeline 学术历程 */
 .timeline-item {
     border-left: 2px solid var(--border-color);
     padding-left: 25px;
@@ -346,7 +366,7 @@ header {
     text-transform: uppercase;
 }
 
-/* ✨ Extracurricular 活动卡片交互美化 */
+/* Extracurricular 活动卡片 */
 .activity-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -361,7 +381,7 @@ header {
     box-shadow: 0 8px 25px var(--primary-glow);
 }
 
-/* 📨 核心表单 UI 精细化美化 */
+/* 表单 UI */
 .contact-center {
     max-width: 600px;
     margin: 0 auto;
@@ -412,7 +432,7 @@ header {
     text-align: center;
 }
 
-/* 🎬 滚动淡入侧滑基础动力学控制 */
+/* 动画系统 */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(40px);
