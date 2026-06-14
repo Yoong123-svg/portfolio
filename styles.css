@@ -382,10 +382,10 @@ header {
     gap: 10px;
 }
 
-/* 🧱 修复：标题前缀去掉了反斜杠 // 改为更加优雅干练的单下划线前缀 */
+/* 🌟 核心修改：完全移除了标题前的符号/线装饰，让其保持绝对空白 */
 .project-info h3::before {
-    content: "_";
-    color: var(--primary);
+    display: none !important;
+    content: "" !important;
 }
 
 .project-info p {
@@ -395,7 +395,7 @@ header {
     margin-bottom: 30px;
 }
 
-/* 🧱 修复：高级科技风 "More details" 按钮（去掉了反斜杠并重构为纯正英文字体） */
+/* 科技控控制按钮 */
 .tech-link {
     font-family: var(--font-tech);
     position: absolute;
