@@ -5,26 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoong Li Yang | Digital Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Essential layout protection to prevent sections from running into each other */
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-        section {
-            display: block;
-            width: 100%;
-            clear: both;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            width: 100%;
-            margin-bottom: 40px;
-        }
-    </style>
 </head>
 <body>
 
@@ -42,7 +22,7 @@
         </nav>
     </header>
 
-    <section id="home" class="hero-section clearfix">
+    <section id="home" class="hero-section">
         <div class="video-overlay"></div>
         <video autoplay muted loop id="hero-video">
             <source src="assets/videos/hero_reel.mp4" type="video/mp4">
@@ -59,17 +39,19 @@
         </div>
     </section>
 
-    <section id="about" class="container clearfix">
+    <section id="about" class="container">
         <h2 class="section-title">About Me</h2>
         <div class="split-grid">
             <div class="profile-card">
                 <img src="profile.png" alt="Yoong Li Yang" class="profile-img scroll-reveal-left">
-                <a href="Yoong_Li_Yang_Resume.pdf" download class="btn btn-primary" style="margin-top:20px; display:inline-block;">Download CV 📥</a>
+                <div style="margin-top: 25px;">
+                    <a href="Yoong_Li_Yang_Resume.pdf" download class="btn btn-primary">Download CV 📥</a>
+                </div>
             </div>
             <div class="bio-content scroll-reveal">
                 <p>My journey in technology started with computer hardware and systems architecture, which heavily sharpened my technical problem-solving logic. Over time, my passion shifted toward the creative application of technology—specifically how users interact with visuals, motion, and digital space. This drove me to specialize in 3D modeling pipelines, motion design, and user-interface optimization.</p>
     
-                <h3>Technical Toolsets</h3>
+                <h3 style="margin-top: 30px; margin-bottom: 10px; font-size: 1.3rem;">Technical Toolsets</h3>
                 <div class="badge-group">
                     <span class="badge badge-tech">Blender</span>
                     <span class="badge badge-tech">CapCut</span>
@@ -81,132 +63,123 @@
         </div>
     </section>
 
-    <section id="projects" class="container bg-alt clearfix">
+    <section id="projects" class="container bg-alt">
         <h2 class="section-title">Works Produced</h2>
         <div class="gallery-grid">
-            <!-- Project 1 (Blender Card with Left Side Animation) -->
+            
             <div class="project-card scroll-reveal-left" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="blender_render.png" alt="3D Animation Showcase" style="width: 100%; height: 200px; object-fit: contain; background-color: #1a1a1a; display: block;">
-                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 40px;">
+                <div class="img-container">
+                    <img src="blender_render.png" alt="3D Animation Showcase">
+                </div>
+                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 50px;">
                     <div>
                         <h3>3D Animation & Motion Design</h3>
                         <p>Cinematic sequences produced in Blender utilizing strategic keyframed light behavior and artistic camera tracking mechanisms. Emphasizes creative angle choreography and dynamic illumination paths to elevate visual storytelling pacing.</p>
                     </div>
-                    <a href="blender.html" style="position: absolute; bottom: 15px; right: 20px; color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
+                    <a href="blender.html" style="position: absolute; bottom: 20px; right: 25px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
                 </div>
             </div>
             
-            <!-- Project 2 (Multimedia Production Card with Right Side Animation) -->
             <div class="project-card scroll-reveal" style="display: flex; flex-direction: column; height: 100%;">
-                <img src="picture9.png" alt="Multimedia Production Preview" style="width: 100%; height: 200px; object-fit: contain; background-color: #1a1a1a; display: block;">
-                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 40px;">
+                <div class="img-container">
+                    <img src="picture9.png" alt="Multimedia Production Preview">
+                </div>
+                <div class="project-info" style="display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; position: relative; padding-bottom: 50px;">
                     <div>
-                        <h3>Multimedia Production & Technical Systems Reel</h3>
-                        <p>A comprehensive media portfolio highlighting technical execution across the entire production lifecycle. Features hands-on experience in field shooting setup, live PA system audio reinforcement console leveling, and post-production editing inside CapCut and Filmora. Focuses on seamless multi-camera transitions, precise rhythmic beat-mapping, and engineered signal controls to deliver balanced, high-impact sensory experiences.</p>
+                        <h3>Multimedia Production & Systems Reel</h3>
+                        <p>A comprehensive media portfolio highlighting technical execution across the entire production lifecycle. Features hands-on experience in field shooting setup, live PA system audio reinforcement console leveling, and post-production editing inside CapCut and Filmora.</p>
                     </div>
-                    <a href="production.html" style="position: absolute; bottom: 15px; right: 20px; color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
+                    <a href="production.html" style="position: absolute; bottom: 20px; right: 25px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 🎓 Academic History Section -->
-    <section id="resume" class="container clearfix">
+    <section id="resume" class="container">
         <h2 class="section-title">Academic History & Qualities</h2>
         <div class="split-grid">
-            <!-- ⬅️ Left Side: Education Columns (Glides from the Left) -->
             <div class="scroll-reveal-left">
-                <h3>Education</h3>
+                <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Education</h3>
                 <div class="timeline-item">
-                    <h4>Universiti Teknikal Malaysia Melaka (UTeM)</h4>
                     <p class="time-marker">2024 - Present (Year 2 Sem 2)</p>
-                    <p>Bachelor of Information Technology (Hons.) in Multimedia (BITM)</p>
+                    <h4>Universiti Teknikal Malaysia Melaka (UTeM)</h4>
+                    <p style="color: var(--text-muted);">Bachelor of Information Technology (Hons.) in Multimedia (BITM)</p>
                 </div>
                 <div class="timeline-item">
-                    <h4>Politeknik Merlimau Melaka (PMM)</h4>
                     <p class="time-marker">Previous Institutional Degree</p>
-                    <p>Diploma in Electronic Engineering (Computer)</p>
+                    <h4>Politeknik Merlimau Melaka (PMM)</h4>
+                    <p style="color: var(--text-muted);">Diploma in Electronic Engineering (Computer)</p>
                 </div>
             </div>
             
-            <!-- ➡️ Right Side: Personal Qualities List (Glides from the Right) -->
             <div class="scroll-reveal">
-                <h3>Personal Qualities</h3>
-                <ul>
-                    <li><strong>Technical Adaptability:</strong> Proven experience navigating advanced 3D environments alongside structural database administration tasks.</li>
-                    <li><strong>Detail-Oriented Design:</strong> Dedicated to precise mesh layouts, optimal UV-unwrapping patterns, and clear user interface contrast values.</li>
-                    <li><strong>Collaborative Problem Solving:</strong> Experienced in identifying workflow blockers with peers to optimize production execution pipelines.</li>
+                <h3 style="margin-bottom: 25px; font-size: 1.4rem;">Personal Qualities</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
+                    <li style="border-left: 2px solid var(--border-color); padding-left: 15px;"><strong style="color: var(--primary);">Technical Adaptability:</strong> Proven experience navigating advanced 3D environments alongside structural database administration tasks.</li>
+                    <li style="border-left: 2px solid var(--border-color); padding-left: 15px;"><strong style="color: var(--primary);">Detail-Oriented Design:</strong> Dedicated to precise mesh layouts, optimal UV-unwrapping patterns, and clear user interface contrast values.</li>
+                    <li style="border-left: 2px solid var(--border-color); padding-left: 15px;"><strong style="color: var(--primary);">Collaborative Problem Solving:</strong> Experienced in identifying workflow blockers with peers to optimize production execution pipelines.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 🌟 Extracurricular Activities Section (Fully Enhanced with Active Links) -->
-    <section id="extracurricular" class="container bg-alt clearfix">
+    <section id="extracurricular" class="container bg-alt">
         <h2 class="section-title">Extracurricular Activities</h2>
-        <div class="split-grid">
+        <div class="split-grid" style="align-items: stretch;">
             
-            <!-- ⬅️ Left Side: Digital Media, Community & Content Creation -->
-            <div class="scroll-reveal-left" style="display: flex; flex-direction: column; gap: 20px;">
-                
-                <!-- Card 1: SGM Event Engagement (Now Interactive with Detail Redirection Link) -->
-                <div class="activity-card" style="background: #121212; border: 1px solid #222; padding: 25px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3); position: relative; padding-bottom: 55px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; color: #fff; font-size: 1.25rem;">Soka Gakkai Malaysia (SGM) Community Events</h3>
-                        <span style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Community</span>
+            <div class="scroll-reveal-left" style="display: flex; flex-direction: column; gap: 25px;">
+                <div class="activity-card" style="position: relative; padding-bottom: 60px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3 style="margin: 0; font-size: 1.25rem;">Soka Gakkai Malaysia (SGM) Community Events</h3>
+                            <span style="background: rgba(0, 229, 255, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">Community</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Participated as an active core organizer and technical crew member for regional community events. Collaborated with multi-disciplinary teams to coordinate scheduling logic, stage alignments, and promotional digital assets.</p>
                     </div>
-                    <p style="color: #aaa; margin-bottom: 15px;">Participated as an active core organizer and technical crew member for regional community events. Collaborated with multi-disciplinary teams to coordinate scheduling logic, stage alignments, and promotional digital assets.</p>
-                    <div class="badge-group" style="margin-bottom: 15px;">
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;">Event Staging</span>
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;">Team Leadership</span>
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem;">Media Coordination</span>
+                    <div>
+                        <div class="badge-group" style="margin-bottom: 15px;">
+                            <span class="badge badge-tech">Event Staging</span>
+                            <span class="badge badge-tech">Team Leadership</span>
+                        </div>
+                        <a href="sgm.html" style="position: absolute; bottom: 20px; right: 28px; color: var(--primary); text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
                     </div>
-                    
-                    <!-- 🔗 More Details Anchor Linking to sgm.html sub-page -->
-                    <a href="sgm.html" style="position: absolute; bottom: 15px; right: 25px; color: #00e5ff; text-decoration: none; font-weight: bold; font-size: 0.95rem;">More details →</a>
                 </div>
 
-                <!-- Card 2: Independent 3D Animation Service -->
-                <div class="activity-card" style="background: #121212; border: 1px solid #222; padding: 25px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; color: #fff; font-size: 1.25rem;">Independent 3D Animation Service</h3>
-                        <span style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Freelance</span>
+                <div class="activity-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                        <h3 style="margin: 0; font-size: 1.25rem;">Independent 3D Animation Service</h3>
+                        <span style="background: rgba(0, 229, 255, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">Freelance</span>
                     </div>
-                    <p style="color: #aaa; margin-bottom: 15px;">Designed custom 3D animated logo intros and promotional visual assets for content creators. Managed revision pipelines from concept wireframe layout blocks to final high-fidelity animation renders.</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Designed custom 3D animated logo intros and promotional visual assets for content creators. Managed revision pipelines from concept wireframe layout blocks to final high-fidelity animation renders.</p>
                     <div class="badge-group">
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;">Blender</span>
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem;">Keyframe Animation</span>
+                        <span class="badge badge-tech">Blender</span>
+                        <span class="badge badge-tech">Keyframe Animation</span>
                     </div>
                 </div>
             </div>
             
-            <!-- ➡️ Right Side: Technical Systems & Research -->
-            <div class="scroll-reveal" style="display: flex; flex-direction: column; gap: 20px;">
-                
-                <!-- Card 3: Technical Collaboration Workshops -->
-                <div class="activity-card" style="background: #121212; border: 1px solid #222; padding: 25px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; color: #fff; font-size: 1.25rem;">Technical Collaboration Workshops</h3>
-                        <span style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Team Review</span>
+            <div class="scroll-reveal" style="display: flex; flex-direction: column; gap: 25px;">
+                <div class="activity-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                        <h3 style="margin: 0; font-size: 1.25rem;">Technical Collaboration Workshops</h3>
+                        <span style="background: rgba(0, 229, 255, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">Team Review</span>
                     </div>
-                    <p style="color: #aaa; margin-bottom: 15px;">Actively engaged in technical troubleshooting sessions with peers, collaborating to solve asset rigging restrictions, UV optimization barriers, and engine rendering bottlenecks inside production pipelines.</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Actively engaged in technical troubleshooting sessions with peers, collaborating to solve asset rigging restrictions, UV optimization barriers, and engine rendering bottlenecks inside production pipelines.</p>
                     <div class="badge-group">
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;">Blender 3D</span>
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem;">UV Unwrapping</span>
+                        <span class="badge badge-tech">Blender 3D</span>
+                        <span class="badge badge-tech">UV Unwrapping</span>
                     </div>
                 </div>
 
-                <!-- Card 4: Software Application Development -->
-                <div class="activity-card" style="background: #121212; border: 1px solid #222; padding: 25px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
-                        <h3 style="margin: 0; color: #fff; font-size: 1.25rem;">Software Application Development</h3>
-                        <span style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">Open Source</span>
+                <div class="activity-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                        <h3 style="margin: 0; font-size: 1.25rem;">Software Application Development</h3>
+                        <span style="background: rgba(0, 229, 255, 0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">Open Source</span>
                     </div>
-                    <p style="color: #aaa; margin-bottom: 15px;">Built and optimized native structural systems, integrating desktop backend logic architectures with secure data query structures to create responsive terminal interfaces.</p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Built and optimized native structural systems, integrating desktop backend logic architectures with secure data query structures to create responsive terminal interfaces.</p>
                     <div class="badge-group">
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;">C++</span>
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px;">MySQL Backend</span>
-                        <span class="badge badge-tech" style="background: #2a2a2a; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem;">Linux Environment</span>
+                        <span class="badge badge-tech">C++</span>
+                        <span class="badge badge-tech">MySQL Backend</span>
                     </div>
                 </div>
             </div>
@@ -214,44 +187,35 @@
         </div>
     </section>
 
-    <!-- 📨 Contact Form Section -->
-    <section id="contact" class="container clearfix">
+    <section id="contact" class="container">
         <div class="contact-center">
-            <h2>Let's Connect</h2>
-            <p>Whether you are looking for a multimedia intern, a video editor, or a 3D asset modeler, feel free to drop a message.</p>
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="color: var(--text-muted);">Whether you are looking for a multimedia intern, a video editor, or a 3D asset modeler, feel free to drop a message.</p>
             <p class="email-highlight">liyangyoong@gmail.com</p>
             
-            <!-- Ajax Contact Form (No Redirects, No Refreshes) -->
             <form id="portfolioContactForm" class="contact-form">
-                
                 <input type="hidden" name="_captcha" value="false">
-
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email Address" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                
-                <button type="submit" id="submitBtn" class="btn btn-primary">Send Message</button>
-                
-                <!-- Success Notification Output Field -->
-                <div id="formFeedback" class="feedback-msg" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; min-height: 25px; transition: color 0.3s ease;"></div>
+                <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div id="formFeedback" class="feedback-msg"></div>
             </form>
         </div>
     </section>
 
     <script src="scripts.js"></script>
 
-    <!-- 🚀 AJAX Background Email Sender & Scroll Listener System -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 1. 📬 Silent Form Handling System
+            // 📬 1. Ajax 表单异步静默提交
             const form = document.getElementById("portfolioContactForm");
             const feedback = document.getElementById("formFeedback");
             const button = document.getElementById("submitBtn");
 
             if (form) {
                 form.addEventListener("submit", function (e) {
-                    e.preventDefault(); // Stop page from refreshing or redirecting!
-                    
+                    e.preventDefault();
                     button.disabled = true;
                     button.innerText = "Sending...";
                     feedback.style.color = "#00f0ff";
@@ -265,7 +229,7 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        feedback.style.color = "#00ff88"; // Bright green text color
+                        feedback.style.color = "#00ff88";
                         feedback.innerText = "Message sent successfully! I will reply to your email within 24 hours.";
                         form.reset();
                     })
@@ -280,7 +244,7 @@
                 });
             }
 
-            // 2. 🎬 Scroll Trigger Animations System
+            // 🎬 2. IntersectionObserver 动态侧滑视差循环触发
             const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
             if (revealElements.length > 0) {
                 const observer = new IntersectionObserver(function (entries) {
@@ -292,8 +256,8 @@
                         }
                     });
                 }, { 
-                    threshold: 0.1,
-                    rootMargin: "0px 0px -50px 0px"
+                    threshold: 0.05,
+                    rootMargin: "0px 0px -40px 0px"
                 });
 
                 revealElements.forEach(function (element) {
