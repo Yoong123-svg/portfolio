@@ -44,7 +44,7 @@ body {
     background: radial-gradient(circle at 50% 50%, #0c0d14 0%, #060608 100%);
 }
 
-/* 🧱 修复后的创意大标题：移除了文字，改回纯科技感极细霓虹线条 */
+/* 创意大标题：纯科技感极细霓虹线条 */
 .section-title {
     font-family: var(--font-tech);
     font-size: 2.6rem;
@@ -320,7 +320,7 @@ header {
     border-bottom-color: var(--primary); border-right-color: var(--primary);
 }
 
-/* 图片容器：雷达扫描特效 */
+/* 图片容器：雷达扫描 */
 .project-card .img-container {
     width: 100%;
     height: 250px;
@@ -382,8 +382,9 @@ header {
     gap: 10px;
 }
 
+/* 🧱 修复：标题前缀去掉了反斜杠 // 改为更加优雅干练的单下划线前缀 */
 .project-info h3::before {
-    content: "//";
+    content: "_";
     color: var(--primary);
 }
 
@@ -394,7 +395,7 @@ header {
     margin-bottom: 30px;
 }
 
-/* 科技控控制按钮 */
+/* 🧱 修复：高级科技风 "More details" 按钮（去掉了反斜杠并重构为纯正英文字体） */
 .tech-link {
     font-family: var(--font-tech);
     position: absolute;
@@ -403,12 +404,12 @@ header {
     color: var(--primary);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.95rem;
     letter-spacing: 1px;
-    padding: 6px 14px;
+    padding: 8px 18px;
     border: 1px solid rgba(0, 229, 255, 0.2);
     background: rgba(0, 229, 255, 0.02);
-    border-radius: 2px;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
