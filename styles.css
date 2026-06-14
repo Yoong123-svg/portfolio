@@ -1,116 +1,134 @@
 /* ==========================================================================
-   GLOBAL STYLES & VARIABLES
+   🌟 全局现代暗黑科技风样式表 (Yoong Li Yang Portfolio)
    ========================================================================== */
+
+/* 引入 Google 顶级现代科技感字体 */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
 :root {
-    --bg-main: #121212;
-    --bg-sub: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #e0E0e0;
-    --accent-cyan: #00f0ff;
-    --accent-glow: rgba(0, 240, 255, 0.3);
+    --bg-main: #0a0a0c;
+    --bg-card: #121216;
+    --primary: #00e5ff;
+    --primary-glow: rgba(0, 229, 255, 0.15);
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --border-color: #22222a;
+    --font-global: 'Plus Jakarta Sans', sans-serif;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--bg-main);
-    color: var(--text-primary);
+    color: var(--text-main);
+    font-family: var(--font-global);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
+/* 🧱 布局通用容器 */
 .container {
-    padding: 80px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
 }
 
 .bg-alt {
-    background-color: var(--bg-sub);
+    background-color: #0e0e12;
 }
 
 .section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    border-left: 4px solid var(--accent-cyan);
-    padding-left: 15px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    letter-spacing: 1px;
 }
 
-/* ==========================================================================
-   HEADER & NAVIGATION
-   ========================================================================== */
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* 导航栏美化 */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 1px solid #222;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 20px;
 }
 
 .logo {
-    font-weight: bold;
-    color: var(--accent-cyan);
     font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     text-decoration: none;
-    margin-left: 30px;
+    font-weight: 500;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-cyan);
+    color: var(--primary);
 }
 
-/* ==========================================================================
-   HERO SECTION WITH VIDEO
-   ========================================================================== */
+/* 🎬 Hero 视频区域 */
 .hero-section {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    justify-content: center;
     overflow: hidden;
 }
 
 #hero-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    z-index: -2;
 }
 
 .video-overlay {
@@ -119,58 +137,91 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(18, 18, 18, 0.85);
+    background: linear-gradient(to bottom, rgba(10,10,12,0.4), var(--bg-main));
     z-index: -1;
 }
 
-.hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; }
-.hero-content h2 { font-size: 1.8rem; color: var(--accent-cyan); margin-bottom: 20px; }
-.hero-content p { max-width: 600px; margin-bottom: 30px; color: var(--text-secondary); }
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
 
-/* ==========================================================================
-   BUTTONS
-   ========================================================================== */
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* 🎛️ 按钮高级样式 */
+.cta-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
 .btn {
     padding: 12px 28px;
-    border-radius: 4px;
-    text-decoration: none;
+    border-radius: 6px;
     font-weight: 600;
-    display: inline-block;
-    transition: all 0.2s ease;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    display: inline-block;
 }
 
 .btn-primary {
-    background-color: var(--accent-cyan);
-    color: #121212;
-    border: 2px solid var(--accent-cyan);
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent-cyan);
-    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
 }
 
 .btn-outline {
-    border: 2px solid var(--text-primary);
-    color: var(--text-primary);
-    margin-left: 15px;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    background: transparent;
 }
 
 .btn-outline:hover {
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(0, 229, 255, 0.05);
+    transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   ABOUT ME SECTION: SPLIT GRID & BIO
-   ========================================================================== */
+/* 👥 网格与分裂视图布局 */
 .split-grid {
     display: grid;
-    grid-template-columns: 1fr 1.4fr; 
-    gap: 60px;                        
-    align-items: flex-start;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .split-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 .profile-card {
@@ -178,177 +229,204 @@ header {
 }
 
 .profile-img {
-    max-width: 100%;    
-    height: auto;       
-    object-fit: contain; 
-    border-radius: 8px;
-    border: 2px solid var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15); 
-    transition: transform 0.3s ease;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: border-color 0.3s;
 }
 
-.profile-img:hover {
-    transform: scale(1.02); 
+.profile-img.active {
+    border-color: var(--primary);
 }
 
-.bio-content p {
-    font-size: 1.15rem;          
-    line-height: 1.8;            
-    color: var(--text-secondary);
-    margin-bottom: 35px;         
-    text-align: justify;         
-}
-
-.bio-content h3 {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-transform: uppercase;   
-    letter-spacing: 1.5px;       
-}
-
-/* ==========================================================================
-   🛠️ TRUE SCROLL DETECTED VISUAL STATES (Synchronized to 3s)
-   ========================================================================== */
-
-/* Left-Side Glide (Profile Picture) */
-.scroll-reveal-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 30s cubic-bezier(0.25, 1, 0.5, 1), transform 3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.scroll-reveal-left.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Bottom Glide changed to Right-Side Glide (Bio Text Paragraph) */
-.scroll-reveal {
-    opacity: 0;
-    transform: translateX(50px); /* ➡️ Moves the start position 50px to the right side */
-    /* ⚡ Synchronized both opacity and transform to a smooth 0.8 seconds */
-    transition: opacity 30s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.scroll-reveal.active {
-    opacity: 1;
-    transform: translateX(0); /* ✅ Glides back to its original position */
-}
-
-/* ==========================================================================
-   CREATIVE COMPONENT: TECHNICAL BADGES
-   ========================================================================== */
+/* 🏷️ 技术徽章样式 */
 .badge-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     margin-top: 15px;
 }
 
 .badge {
-    padding: 10px 20px;          
-    border-radius: 30px;         
-    font-size: 0.95rem;          
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    transition: all 0.25s ease;
-    cursor: default;
 }
 
-.badge-tech { 
-    background-color: rgba(138, 92, 246, 0.1); 
-    color: #a78bfa; 
-    border: 1px solid rgba(138, 92, 246, 0.4); 
-}
-.badge-tech:hover {
-    background-color: rgba(138, 92, 246, 0.25);
-    box-shadow: 0 0 12px rgba(138, 92, 246, 0.3);
+.badge-tech {
+    background: rgba(0, 229, 255, 0.08);
+    color: var(--primary);
+    border: 1px solid rgba(0, 229, 255, 0.15);
 }
 
-.badge-logic { 
-    background-color: rgba(0, 240, 255, 0.08); 
-    color: var(--accent-cyan); 
-    border: 1px solid rgba(0, 240, 255, 0.3); 
-}
-.badge-logic:hover {
-    background-color: rgba(0, 240, 255, 0.2);
-    box-shadow: 0 0 12px var(--accent-glow);
+.badge-logic {
+    background: rgba(148, 163, 184, 0.1);
+    color: #e2e8f0;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ==========================================================================
-   WORKS PRODUCED GALLERY GRID
-   ========================================================================== */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
+/* 🖼️ Works Produced 项目卡片美化 */
 .project-card {
-    background-color: var(--bg-main);
-    border: 1px solid #222;
-    border-radius: 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-cyan);
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 30px rgba(0, 229, 255, 0.12);
 }
 
-.project-media {
-    height: 200px;
-    background-color: #252525;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
+.project-card .img-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #16161a;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 .project-info {
-    padding: 20px;
+    padding: 25px;
 }
 
-.project-info h3 { margin-bottom: 10px; font-size: 1.2rem;}
-.project-info p { font-size: 0.9rem; color: var(--text-secondary); }
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
 
-/* ==========================================================================
-   RESUME TIMELINE
-   ========================================================================== */
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* 🎓 Timeline 学术历程样式 */
 .timeline-item {
-    border-left: 2px solid #333;
-    padding-left: 20px;
+    border-left: 2px solid var(--border-color);
+    padding-left: 25px;
     position: relative;
     margin-bottom: 30px;
 }
 
 .timeline-item::before {
-    content: '';
+    content: "";
     position: absolute;
     left: -7px;
-    top: 6px;
+    top: 5px;
     width: 12px;
     height: 12px;
-    background: var(--accent-cyan);
     border-radius: 50%;
+    background: var(--bg-main);
+    border: 2px solid var(--primary);
 }
 
-.time-marker { font-size: 0.85rem; color: var(--accent-cyan); font-weight: bold; }
-
-/* ==========================================================================
-   CONTACT FORM & SYSTEM FEEDBACK
-   ========================================================================== */
-.contact-center { max-width: 600px; margin: 0 auto; text-align: center; }
-.email-highlight { font-size: 1.3rem; color: var(--accent-cyan); margin: 20px 0 40px; font-weight: bold;}
-
-.contact-form { display: flex; flex-direction: column; gap: 15px; text-align: left; }
-.contact-form input, .contact-form textarea {
-    width: 100%; padding: 14px; background: var(--bg-main); border: 1px solid #333;
-    color: #fff; border-radius: 4px; outline: none; transition: border-color 0.2s;
+.time-marker {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
 }
-.contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent-cyan); }
 
-.feedback-msg { margin-top: 15px; font-weight: bold; text-align: center; }
-.feedback-msg.success { color: #00ff88; }
+/* ✨ Extracurricular 活动卡片交互美化 */
+.activity-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px var(--primary-glow);
+}
+
+/* 📨 核心表单 UI 精细化美化 */
+.contact-center {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.email-highlight {
+    font-size: 1.3rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 20px 0 40px 0;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: #16161c;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-family: var(--font-global);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #1a1a24;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+}
+
+.feedback-msg {
+    min-height: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* 🎬 滚动淡入侧滑基础动力学控制 */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-reveal.active,
+.scroll-reveal-left.active {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
