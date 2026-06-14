@@ -208,7 +208,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 📬 1. Ajax 表单异步静默提交
             const form = document.getElementById("portfolioContactForm");
             const feedback = document.getElementById("formFeedback");
             const button = document.getElementById("submitBtn");
@@ -244,7 +243,6 @@
                 });
             }
 
-            // 🎬 2. IntersectionObserver 动态侧滑视差循环触发
             const revealElements = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left");
             if (revealElements.length > 0) {
                 const observer = new IntersectionObserver(function (entries) {
